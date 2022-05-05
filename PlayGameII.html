@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<h2>Programa de acertar un número en un arreglo</h2>
+<input/>
+<button>
+    Verificar si descubrió
+</button>
+
+<script>   
+    var secreto=[1,5,8,3];
+    var entrada=document.querySelector("input");
+    entrada.focus();
+    //También sirve de esta manera -> var entrada=document.querySelector("input");    
+    function verificar(){
+        var encontrado=false;   
+        for(var posicion = 0; posicion < secreto.length; posicion++){
+            if (parseInt(entrada.value)==secreto[posicion]){
+            alert("Usted acertó.");
+            encontrado=true;
+            break;
+            }                     
+               
+        }
+        if (encontrado==false){
+            alert("Usted se equivocó");
+        }  
+        
+        entrada.value="";
+        entrada.focus(); 
+        //count++;   
+
+    }            
+    
+    var boton=document.querySelector("button");
+    boton.onclick = verificar;
+
+</script>

@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<h2>Programa para guardar un texto en una lista</h2>
+
+<script>
+    var textoEntrada=prompt("ingrese cualquier cosa: ");    
+    var textoLista= [];
+    textoLista=Array.from(textoEntrada ,(val,index) => val+index);
+    document.write(textoEntrada);
+    document.write("<br>"); 
+    document.write(textoLista);
+    document.write("<br>");  
+    
+    function recorrerArreglo(){         
+        /*for (var posicion=0;posicion<textoLista.length;posicion++){
+            console.log(textoLista); 
+            if(textoLista.includes("a")==true){
+                alert("el arreglo tiene letras a");
+            } 
+            break;          
+            
+        }*/ 
+        if(textoEntrada.includes("a")==true){
+                alert("el arreglo tiene letras a");
+            }
+                   
+    }
+    
+    recorrerArreglo(textoLista);
+    
+
+
+</script>

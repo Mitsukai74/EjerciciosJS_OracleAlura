@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+<h2>Programa de acertar un número en un arreglo sin repeticiones</h2>
+<input/>
+<button>
+    Verificar si descubrió
+</button>
+
+<script>
+    function aleatorio(){
+        return Math.round(Math.random()*10);
+    }
+
+    function llenar_arreglo(cantidad){
+        var arr1=[];
+        var count=0;
+        
+        while(count<cantidad){            
+            var numeroAleatorio=aleatorio();
+            console.log(numeroAleatorio);
+            var encontrado=false;
+            if (numeroAleatorio !=0){
+                for(var posicion=0;posicion<arr1.length;posicion++){
+                    if(numeroAleatorio==arr1[posicion]){
+                        encontrado=true;
+                        console.log(arr1);
+                        break;
+                    }                 
+                }
+                if (encontrado==false){
+                    arr1.push(numeroAleatorio);
+                    count++;
+                }
+
+            }           
+            
+            
+        }
+        return arr1;
+    }
+
+    var secreto=llenar_arreglo(6);
+    console.log(secreto);
+    
+    var entrada=document.querySelector("input");
+    entrada.focus();
+    //También sirve de esta manera -> var entrada=document.querySelector("input");    
+    function verificar(){
+        var encontrado=false;   
+        for(var posicion = 0; posicion < secreto.length; posicion++){
+            if (parseInt(entrada.value)==secreto[posicion]){
+            alert("Usted acertó.");
+            encontrado=true;
+            break;
+            }                     
+               
+        }
+        if (encontrado==false){
+            alert("Usted se equivocó");
+        }  
+        
+        entrada.value="";
+        entrada.focus(); 
+        //count++;   
+
+    }            
+    
+    var boton=document.querySelector("button");
+    boton.onclick = verificar;
+
+</script>

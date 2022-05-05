@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<h2>Programa para añadir los ingredientes a una receta</h2>
+<input/>
+<button>
+    Añadir los ingredientes
+</button>
+
+<script>
+    var ingredientes = [];
+    var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+    var contador = 1;
+
+    while( contador <= cantidad){        
+        var ingrediente = prompt("Informe el ingrediente " + contador);
+        var encontrado=false;
+        for(var psc=0;psc<ingredientes.length;psc++){
+            if(ingredientes[psc]==ingrediente){
+                encontrado==true;
+                alert("El ingrediente no puede ser igual a otro ya ingresado,ingrese otro");
+                break;
+            }            
+            
+        }
+        if(encontrado==false){
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+        
+        
+        
+    }
+
+    console.log(ingredientes);
+    
+</script>
